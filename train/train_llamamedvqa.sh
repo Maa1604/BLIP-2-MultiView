@@ -8,7 +8,7 @@ set -euo pipefail
 PYTHON=${PYTHON:-python}
 
 # Experiment name (change as needed)
-EXP_NAME="blip2_llamamedvqa_1"    # e.g. "blip2_base_padchestgr"
+EXP_NAME="blip2_llamamedvqa_5"    # e.g. "blip2_base_padchestgr"
 
 # Training hyperparameters
 EPOCHS=30
