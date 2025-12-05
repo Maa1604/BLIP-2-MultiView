@@ -27,7 +27,7 @@ def _canon_view_name(s: str) -> Optional[str]:
     return None
 
 
-class LlamaMedVQADataset(Dataset):
+class mimic_cxr_vqa_Dataset(Dataset):
     """
     Multi-view VQA dataset:
       - csv columns: image_path (possibly comma/semicolon-separated list), question, answer,

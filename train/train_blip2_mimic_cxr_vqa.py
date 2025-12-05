@@ -22,9 +22,9 @@ from myscorers.bertscore.bertscore import BertScorer
 from myscorers.chexbert.chexbert import myF1ChexBert
 from myscorers.myradgraph.myradgraph import myRadGraph
 
-from paths import DICT_CSV_LLAMAMEDVQA_PATH
+from paths import DICT_CSV_MIMIC_CXR_VQA_PATH
 
-from mydatasets.llamamedvqa_dataset import LlamaMedVQADataset, VIEW_KEYS
+from mydatasets.mimic_cxr_vqa_dataset import mimic_cxr_vqa_Dataset, VIEW_KEYS
 from mymodels.blip2_multiview import build_model_and_processor
 
 torch.set_float32_matmul_precision('medium')
@@ -43,8 +43,8 @@ parser.add_argument('--save_every', type=int, default=0, help='If >0, additional
 parser.add_argument('--max_new_tokens', type=int, default=128, help='Max tokens for generation.')
 parser.add_argument('--num_beams', type=int, default=2, help='Beams for generation.')
 
-train_csv = DICT_CSV_LLAMAMEDVQA_PATH["train"]
-val_csv   = DICT_CSV_LLAMAMEDVQA_PATH["test"]
+train_csv = DICT_CSV_MIMIC_CXR_VQA_PATH["train"]
+val_csv   = DICT_CSV_MIMIC_CXR_VQA_PATH["test"]
 
 args = parser.parse_args()
 
@@ -84,8 +84,8 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 # ----------------------------
 # Dataset & DataLoaders
 # ----------------------------
-train_ds = LlamaMedVQADataset(csv_path=train_csv)
-val_ds   = LlamaMedVQADataset(csv_path=val_csv)
+train_ds = mimic_cxr_vqa_Dataset(csv_path=train_csv)
+val_ds   = mimic_cxr_vqa_Dataset(csv_path=val_csv)
 
 # IMPORTANT: pass num_query_tokens & image_token_id so collate can prepend 3Q tokens
 num_q = int(model.config.num_query_tokens)

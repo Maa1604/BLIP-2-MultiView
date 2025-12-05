@@ -8,7 +8,7 @@ set -euo pipefail
 PYTHON=${PYTHON:-python}
 
 # Experiment name (change as needed)
-EXP_NAME="blip2_llamamedvqa_5"    # e.g. "blip2_base_padchestgr"
+EXP_NAME="blip2_mimic_cxr_vqa_6"    # e.g. "blip2_base_padchestgr"
 
 # Training hyperparameters
 EPOCHS=30
@@ -22,7 +22,7 @@ SAVE_EVERY=0
 # Optional: select GPU
 export CUDA_VISIBLE_DEVICES=0
 
-${PYTHON} train_blip2_llamamedvqa.py \
+${PYTHON} train_blip2_mimic_cxr_vqa.py \
   --exp_name "${EXP_NAME}" \
   --epochs "${EPOCHS}" \
   --batch_size "${BATCH_SIZE}" \

@@ -29,16 +29,7 @@ To ensure the training scripts function correctly, you must download the dataset
 
 ### 1. Dataset Download and Placement
 
-You need to download the CSV files for the **MIMIC-CXR-VQA** dataset and place them inside a folder named `MIMIC-CXR-VQA` within your main data directory (e.g., `/data`).
-
-### 2. Vocabulary Creation
-
-Use the provided script inside the folder `MIMIC-CXR-VQA` to generate the vocabulary file:
-
-```bash
-python createvocab.py
-```
-This will create the necessary vocabulary file: `vocab-mimic-cxr-vqa.tgt`.
+You need to download the CSV files for the **MIMIC-CXR-VQA** dataset.
 
 ### 3. Configure File Paths
 
