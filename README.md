@@ -37,7 +37,7 @@ Before running the experiments, verify the settings in the `paths.py` file.
 The only variable you are required to set correctly is:
 
 - **`IMAGES_MIMIC_PATH`**: This must point to the root directory containing the actual MIMIC-CXR images.
-
+- **`DICT_CSV_MIMIC_CXR_VQA_PATH`**: This must point to CSV files for the **MIMIC-CXR-VQA** dataset.
 
 
 ## 1\. Environment Setup 🐍
@@ -64,8 +64,8 @@ To execute the full training pipeline, follow these sequential steps:
     cd train
     ```
 
-2.  **Stage 1: NLL Training (Frozen Encoder)**
-    Execute the initial Negative Log-Likelihood (NLL) training run with the model's encoder frozen:
+2.  **Train BLIP-2-MultiView MIMIC-CXR-VQA**
+    Execute the training run:
     ```bash
-    ./nll_train_freeze_econder.sh
+    ./train_mimic_cxr_vqa.sh
     ```
