@@ -16,7 +16,7 @@ BATCH_SIZE=4
 ACCUM=32
 LR=3e-4
 NUM_BEAMS=2
-MAX_NEW_TOKENS=128    #41 words is the longest in padchestgr
+MAX_NEW_TOKENS=128
 SAVE_EVERY=0
 
 # Optional: select GPU
